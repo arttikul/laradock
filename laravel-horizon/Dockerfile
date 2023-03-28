@@ -298,6 +298,8 @@ RUN rm /var/cache/apk/* \
 # Make sure you rebuild your container with every change.
 #
 
+COPY laravel.ini /usr/local/etc/php/conf.d/laravel.ini
+
 COPY supervisord.conf /etc/supervisord.conf
 
 ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisord.conf"]
